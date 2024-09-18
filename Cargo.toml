@@ -14,7 +14,7 @@ repository="https://github.com/rostyhn/ncopds"
 [dependencies]
 cursive = { version = "0.21.1", features = ["toml"] }
 reqwest = { version="0.12.7" }
-atom_syndication = "0.11"
+atom_syndication = "0.12.4"
 structopt = { version="0.3.26", default-features = false }
 bytes = {version = "1.2.1"}
 toml = "0.5.9"
@@ -30,6 +30,5 @@ chrono = "0.4.38"
 keyring = {version="3.2.1", features=["linux-native"]}
 infer = "0.16.0"
 notify = "6.1.1"
-cursive-async-view = "0.8.0"
 rand = "0.8.5"
 roxmltree = "0.20.0"
