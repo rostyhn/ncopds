@@ -11,6 +11,9 @@ Servers requiring authentication are supported. `ncopds` does not store your pas
 
 This is still alpha software. Please feel free to submit bugs using the issue tracker and improve upon what you see here.
 
+# Installation
+The easiest way to install `ncopds` is through Rust's package manager, `cargo`. Just run `cargo install ncopds` to get started! Currently, only linux is supported. I cannot guarantee it will work on MacOS or Windows.
+
 # Using ncopds
 There are several menus at the top of the screen. Clicking `ncopds` at the top of the screen shows you a help menu with information similar to this README.
 
