@@ -1,7 +1,13 @@
 [package]
 name = "ncopds"
+description = "A TUI program for navigating OPDS catalogs."
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
+keywords = ["ebook management", "ebooks", "opds"]
+categories = ["command-line-utilities"]
+license-file="LICENSE"
+readme = "README.md"
+repository="https://github.com/rostyhn/ncopds"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
