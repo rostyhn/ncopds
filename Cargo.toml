@@ -2,7 +2,7 @@
 name = "ncopds"
 description = "A TUI program for navigating OPDS catalogs."
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 keywords = ["ebook management", "ebooks", "opds"]
 categories = ["command-line-utilities"]
 license-file="LICENSE"
@@ -13,9 +13,9 @@ repository="https://github.com/rostyhn/ncopds"
 
 [dependencies]
 cursive = { version = "0.21.1", features = ["toml"] }
-reqwest = { git = "https://github.com/seanmonstar/reqwest", features = ["blocking"] }
+reqwest = { version="0.12.7" }
 atom_syndication = "0.11"
-structopt = { git = "https://github.com/TeXitoi/structopt", default-features = false }
+structopt = { version="0.3.26", default-features = false }
 bytes = {version = "1.2.1"}
 toml = "0.5.9"
 serde = "1.0.147"
