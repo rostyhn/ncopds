@@ -5,7 +5,6 @@ use crate::server::{store_password, Server};
 use crate::ui::uiroot::{UIMessage, UIRoot};
 use crate::utils::{directory_str_to_url, rename_full_dir_fname};
 use chrono::prelude::*;
-use cursive::reexports::log::{log, Level};
 use image::load_from_memory;
 use keyring;
 use notify::{RecommendedWatcher, RecursiveMode, Watcher};
@@ -248,7 +247,7 @@ impl Controller {
                     .send(UIMessage::ShowContextMenu(title, ctx_entries))?;
                 Ok(())
             }
-            EntryType::Directory(title, url) => {
+            EntryType::Directory(_title, url) => {
                 self.tx.send(ControllerMessage::Navigate(url))?;
                 Ok(())
             }
@@ -406,11 +405,11 @@ impl Controller {
             }
             ControllerMessage::RequestImage(entry) => {
                 match entry {
-                    EntryType::File(title, url) => {
+                    EntryType::File(_title, _url) => {
                         // TODO: implement rendering the first page of a pdf / epub
                         // load from disk
                     }
-                    EntryType::Directory(title, url) => {
+                    EntryType::Directory(_title, _url) => {
                         // return generic image
                     }
                     EntryType::OPDSEntry(data) => {

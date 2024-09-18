@@ -5,7 +5,6 @@ use crate::ui::canvas::CanvasView;
 use crate::ui::dialogs::{input_dialog, notification};
 use crate::ui::directory_view::directory_view;
 use crate::ui::side_panel::side_panel;
-use cursive::reexports::log::{log, Level};
 use cursive::view::{Nameable, SizeConstraint};
 use cursive::views::{
     Dialog, HideableView, LinearLayout, NamedView, PaddedView, Panel, ResizedView, ScrollView,
@@ -256,8 +255,8 @@ impl UIRoot {
                     for entry in items {
                         let d = entry.clone();
                         match entry {
-                            EntryType::File(title, url) => select.add_item(title, d),
-                            EntryType::Directory(title, url) => select.add_item(title, d),
+                            EntryType::File(title, _url) => select.add_item(title, d),
+                            EntryType::Directory(title, _url) => select.add_item(title, d),
                             EntryType::OPDSEntry(e) => select.add_item(&e.title, d),
                         }
                     }

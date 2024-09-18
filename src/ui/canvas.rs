@@ -2,7 +2,6 @@ use image::DynamicImage;
 
 use cursive::direction::Direction;
 use cursive::event::EventResult;
-use cursive::reexports::log::{log, Level};
 use cursive::theme::{Color, ColorStyle};
 use cursive::view::CannotFocus;
 use cursive::Printer;

@@ -69,7 +69,7 @@ pub fn render_entry_in_side_panel(s: &mut Cursive, entry: &EntryType) {
         .unwrap();
 
     match entry {
-        EntryType::File(fname, url) | EntryType::Directory(fname, url) => {
+        EntryType::File(fname, _url) | EntryType::Directory(fname, _url) => {
             title.set_content(fname);
             canvas_wrapper.hide();
 

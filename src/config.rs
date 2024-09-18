@@ -1,6 +1,5 @@
 use crate::server::Server;
 use crate::Error;
-use cursive::reexports::log::{log, Level};
 use serde_derive::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::env;

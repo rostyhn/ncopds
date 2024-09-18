@@ -11,7 +11,6 @@ use controller::{Controller, ControllerMessage};
 use std::env;
 use std::error::Error;
 use std::path::Path;
-extern crate termsize;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {

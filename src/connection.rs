@@ -5,7 +5,6 @@ use crate::utils::{parse_href, read_dir};
 use async_trait::async_trait;
 use atom_syndication::Feed;
 use bytes::Bytes;
-use cursive::reexports::log::{log, Level};
 use roxmltree::Document;
 use std::any::Any;
 use std::collections::HashMap;
@@ -88,7 +87,7 @@ impl Connection for LocalConnection {
         Err("At directory root; cannot go back.".into())
     }
 
-    async fn get_image_bytes(&self, addr: &Url) -> Bytes {
+    async fn get_image_bytes(&self, _addr: &Url) -> Bytes {
         // TODO: implement image rendering for local files
         // should be reading byte info from file
         Bytes::new()
@@ -363,32 +362,5 @@ impl Connection for OnlineConnection {
 
     fn as_any(&self) -> &dyn Any {
         self
-    }
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    use crate::config::{read_config, Config, CONFIG_DIRECTORY};
-    use crate::env;
-    use crate::Path;
-
-    // TODO: add test config
-    #[test]
-    fn test_connection() {
-        // NOTE: the test assumes that you have a valid config set up
-        /*
-        let home = env::var("HOME").unwrap().to_string();
-        // read config file & check that all values are declared
-        let config: Config = read_config(Path::new(&(home + CONFIG_DIRECTORY)));
-
-        let s_info = config.servers.unwrap();
-        let server = s_info.values().next().unwrap();
-
-        let conn = OnlineConnection::new(&server).unwrap();
-        let f = conn.get_page();
-
-        print!("{:?}", f);*/
     }
 }
