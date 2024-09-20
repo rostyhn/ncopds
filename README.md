@@ -9,7 +9,9 @@ The interface is designed to be responsive, using multiple threads to manage the
 
 Servers requiring authentication are supported. `ncopds` does not store your passwords anywhere. Instead, it relies on your system's keyring to store passwords.
 
-This is still alpha software. Please feel free to submit bugs using the issue tracker and improve upon what you see here.
+**This is still alpha software. Please feel free to submit bugs using the issue tracker and improve upon what you see here.**
+
+You can find a directory of OPDS catalogs you can use with `ncopds` [here](https://wiki.mobileread.com/wiki/OPDS). I personally run a `calibre-web` server which supports serving books through a OPDS catalog; that directory has other software you can use to serve OPDS catalogs as well.
 
 # Installation
 The easiest way to install `ncopds` is through Rust's package manager, `cargo`. Just run `cargo install ncopds` to get started! Currently, only linux is supported. I cannot guarantee it will work on MacOS or Windows.
