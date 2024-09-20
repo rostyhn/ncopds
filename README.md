@@ -5,16 +5,16 @@
     <img src="ncopds.png" width="1000"/>
 </p>
 
-The interface is designed to be responsive, using multiple threads to manage the data coming in from the OPDS server and drive the UI. Locally, `ncopds` allows users to manage their downloads directory through a set of basic operations, allowing them to rename and delete files. Downloaded books are opened using your system's preferred handler for .pdfs / .epubs. `ncopds` does not store metadatain sqlite databases or clutter up your downloads directory in any way, unlike other ebook managers. 
+The interface is designed to be responsive, using multiple threads to manage the data coming in from the OPDS server and drive the UI. Locally, `ncopds` allows users to manage their downloads directory through a set of basic operations, allowing them to rename and delete files. Downloaded books are opened using your system's preferred handler for .pdfs / .epubs. `ncopds` does not store metadata in sqlite databases or clutter up your downloads directory in any way, unlike other ebook managers. 
 
-Servers requiring authentication are supported. `ncopds` does not store your passwords anywhere. Instead, it relies on your system's keyring to store passwords.
+Servers requiring authentication are supported. `ncopds` does not store your passwords anywhere. It relies on your system's keyring to store passwords instead.
 
 **This is still alpha software. Please feel free to submit bugs using the issue tracker and improve upon what you see here.**
 
 You can find a directory of OPDS catalogs you can use with `ncopds` [here](https://wiki.mobileread.com/wiki/OPDS). I personally run a `calibre-web` server which supports serving books through a OPDS catalog; that directory has other software you can use to serve OPDS catalogs as well.
 
 # Installation
-The easiest way to install `ncopds` is through Rust's package manager, `cargo`. Just run `cargo install ncopds` to get started! Currently, only linux is supported. I cannot guarantee it will work on MacOS or Windows.
+The easiest way to install `ncopds` is through Rust's package manager, `cargo`. Just run `cargo install ncopds` to get started! Currently, only Linux-based distributions are supported. I cannot guarantee it will work on MacOS or Windows.
 
 # Using ncopds
 There are several menus at the top of the screen. Clicking `ncopds` at the top of the screen shows you a help menu with information similar to this README.
@@ -30,10 +30,10 @@ The only field that is required for `ncopds` to work is the `download_directory`
 base_url = "https://example.com/opds" (MUST BE FIRST OPDS PAGE, NOT JUST THE DOMAIN)
 username = "rostyhn" (OPTIONAL)
 ```
-You cannot store a password inside the configuration file. If you include a username inside a connection, `ncopds` will ask you for the password the next time you run it.
+**You cannot store a password inside the configuration file.** If you include a username inside a connection, `ncopds` will ask you for the password the next time you run it.
 
 ## Configuring the theme 
-You can also edit the cursive theme by editing the theme file located at `$HOME/.config/ncopds/theme.toml`. More documentation on the options is available [here](https://docs.rs/cursive/latest/cursive/theme/index.html). Otherwise, `ncopds` will just use your default terminal colors.
+You can edit the cursive theme by editing the theme file located at `$HOME/.config/ncopds/theme.toml`. More documentation on the options is available [here](https://docs.rs/cursive/latest/cursive/theme/index.html). Otherwise, `ncopds` will just use your default terminal colors.
 
 # Hotkeys
 There are some hotkeys available.
